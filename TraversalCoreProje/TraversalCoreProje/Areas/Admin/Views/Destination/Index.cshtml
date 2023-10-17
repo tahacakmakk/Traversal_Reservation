@@ -1,0 +1,44 @@
+﻿@using EntityLayer.Concrete
+@model List<Destination>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+<!-- Basic Bootstrap Table -->
+<div class="card">
+    <h5 class="card-header">Tur Rotaları </h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr> 
+                    <th>#</th>
+                    <th>Şehir</th>
+                    <th>Fiyat</th>
+                    <th>Kapasite</th>
+                    <th>Sitede Gör</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.City</td>
+                        <td>@item.Price</td>
+                        <td>@item.Capacity</td>
+                        <td><a href="/Destination/DestinationDetails/@item.DestinationID" class="btn btn-outline-info">Sitede Gör</a></td>
+                        <td><a href="/Admin/Destination/DeleteDestination/@item.DestinationID" class="btn btn-outline-danger">Sil</a></td>
+                        <td><a href="/Admin/Destination/UpdateDestination/@item.DestinationID" class="btn btn-outline-primary">Güncelle</a></td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="/Admin/Destination/AddDestination/" class="btn btn-success mt-2"> Yeni Rota Ekle</a>

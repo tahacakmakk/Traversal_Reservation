@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.Guide
+@{
+	ViewData["Title"] = "AddGuide";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-xl">
+	<div class="card mb-4">
+		<div class="card-header d-flex justify-content-between align-items-center">
+			<h5 class="mb-0">Rehber Ekle</h5>
+		</div>
+		<div class="card-body">
+			<form method="post">
+				<div class="mb-3">
+					<label class="form-label" for="basic-default-fullname">Ad Soyad</label>
+					<input type="text" asp-for="Name" class="form-control" id="basic-default-fullname" placeholder="John Doe" />
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="basic-default-company">Görsel</label>
+					<input type="text" class="form-control" asp-for="Image" />
+					<span asp-validation-for="Image" class="text-danger"></span>
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="basic-default-company">Instagram Url</label>
+					<input type="text" class="form-control" asp-for="InstagramUrl" />
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="basic-default-company">Twitter Url</label>
+					<input type="text" class="form-control" asp-for="TwitterUrl" />
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="basic-default-company">Görsel</label>
+					<input type="text" class="form-control" asp-for="Image" />
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="basic-default-message">Açıklama</label>
+					<textarea asp-for="Description" class="form-control"></textarea>
+					<span asp-validation-for="Description" class="text-danger"></span>
+				</div>
+				<button type="submit" class="btn btn-primary">Ekle</button>
+			</form>
+		</div>
+	</div>
+</div>
+

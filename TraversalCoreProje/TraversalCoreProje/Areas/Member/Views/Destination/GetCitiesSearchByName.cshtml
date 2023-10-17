@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete
+@model List<Destination>
+@{
+	ViewData["Title"] = "GetCitiesSearchByName";
+	Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="row">
+	<div class="col-12">
+		<div class="card mb-4">
+			<div class="card-header pb-0">
+				<form asp-action="GetCitiesSearchByName" method="get" asp-area="Member">
+					<div class="input-group">
+						<h6 class="mr-5">Tur Rotası Arama Sayfası</h6>
+						<span class="input-group-text text-body " style="height:30px; margin-left:100px;"><i class="fas fa-search" aria-hidden="true"></i></span>
+						<input type="text" placeholder="Aranacak Şehri Giriniz" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control" style="height:30px;">
+						<button type="submit" value="Şehir Ara" class="btn btn-outline-dark  p-0" style="height:30px; width:100px; align-items:center;">Ara</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="card-body px-0 pt-0 pb-2">
+				<div class="table-responsive p-0">
+					@if (Model.Count == 0)
+					{
+						<p class="alert alert-danger text-center mb-0">Aradığınız şehir bulunamadı.</p>
+					}
+					else
+					{
+						<table class="table align-items-center mb-0">
+							<tr>
+								<td>#</td>
+								<td>Şehir</td>
+								<td>Süre</td>
+								<td>Kapasite</td>
+								<td>Fiyat</td>
+								<td>Detaylar</td>
+							</tr>
+							@foreach (var item in Model)
+							{
+								<tr>
+									<td>@item.DestinationID</td>
+									<td>@item.City</td>
+									<td>@item.DayNight</td>
+									<td>@item.Capacity</td>
+									<td>@item.Price ₺</td>
+									<td><a href="#" class="btn " style="margin:10px 0px 10px 0px">Detaylar</a></td>
+								</tr>
+							}
+						</table>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

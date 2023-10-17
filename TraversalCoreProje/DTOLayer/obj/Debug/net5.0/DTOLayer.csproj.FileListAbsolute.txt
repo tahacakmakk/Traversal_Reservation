@@ -1,0 +1,12 @@
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\bin\Debug\net5.0\DTOLayer.deps.json
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\bin\Debug\net5.0\DTOLayer.dll
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\bin\Debug\net5.0\DTOLayer.pdb
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\obj\Debug\net5.0\DTOLayer.csproj.AssemblyReference.cache
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\obj\Debug\net5.0\DTOLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\obj\Debug\net5.0\DTOLayer.AssemblyInfoInputs.cache
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\obj\Debug\net5.0\DTOLayer.AssemblyInfo.cs
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\obj\Debug\net5.0\DTOLayer.csproj.CoreCompileInputs.cache
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\obj\Debug\net5.0\DTOLayer.dll
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\obj\Debug\net5.0\refint\DTOLayer.dll
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\obj\Debug\net5.0\DTOLayer.pdb
+C:\Users\taha8\Desktop\Travel Trip Project\TraversalCoreProje\DTOLayer\obj\Debug\net5.0\ref\DTOLayer.dll

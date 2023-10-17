@@ -1,0 +1,108 @@
+﻿@model TraversalCoreProje.Models.UserRegisterViewModel
+@{
+    Layout = null;
+}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Kaydol</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		  content="Invent Signup Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta tag Keywords -->
+	<!--/Style-CSS -->
+	<link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
+	<!--//Style-CSS -->
+</head>
+
+<body>
+	<!-- /login-section -->
+	<section class="w3l-login-6">
+		<div class="login-hny">
+			<div class="form-content">
+				<div class="form-right">
+					<div class="overlay">
+						<div class="grid-info-form">
+							<h5>Traversal Rezervasyon</h5>
+							<h3>Hesap Oluşturun</h3>
+							<p>
+								Hayatın stresinden kaçmak ve huzurun tadını çıkarmak için mükemmel bir kaçış noktası olan bu destinasyon, sizi büyüleyici doğal güzellikleriyle karşılıyor. Kültürel zenginlikleri keşfetmek, tarihi mekanları gezmek ve yerel lezzetleri tatmak için ideal bir yerdeyiz. Rezervasyonunuzu yapın ve bu muhteşem deneyimi yaşamak için hazır olun. Unutulmaz bir gezi sizi bekliyor!
+							</p>
+							<a href="index.html" class="read-more-1 btn">Hadi Başlayalım</a>
+						</div>
+
+					</div>
+				</div>
+				<div class="form-left">
+					<div class="middle">
+						<h4>Bize Katılın</h4>
+						<p>Hemen ücretsiz hesap oluştur.</p>
+					</div>
+					<form method="post" class="signin-form">
+						<div class="form-input">
+							<label>Ad</label>
+							<input type="text" asp-for="Name" placeholder=""  />
+							<span asp-validation-for="Name" class="mt-2 text-danger" style="color:red"></span>
+						</div>
+						<div class="form-input">
+							<label>Soyad</label>
+							<input type="text" asp-for="Surname" placeholder=""  />
+							<span asp-validation-for="Surname" class="mt-2 text-danger" style="color:red"></span>
+						</div>
+						<div class="form-input">
+							<label>Kullanıcı Adı</label>
+							<input type="text" asp-for="UserName" placeholder=""  />
+							<span asp-validation-for="UserName" class="mt-2 text-danger" style="color:red"></span>
+						</div>
+						<div class="form-input">
+							<label>Email</label>
+							<input type="email" asp-for="Mail" placeholder=""  />
+							<span asp-validation-for="Mail" class="mt-2 text-danger" style="color:red"></span>
+						</div>
+						<div class="form-input">
+							<label>Şifre</label>
+							<input type="password" asp-for="Password" placeholder=""  />
+							<span asp-validation-for="Password" class="mt-2 text-danger" style="color:red"></span>
+						</div>
+						<div class="form-input">
+							<label>Şifre Tekrar</label>
+							<input type="password" asp-for="ConfirmPassword" placeholder=""  />
+							<span asp-validation-for="ConfirmPassword" class="mt-2 text-danger" style="color:red"></span>
+						</div>
+						<div class="text-danger" asp-validation-summary="ModelOnly" style="color:red;"></div>
+						<br />
+						<button class="btn">Kaydol</button>
+					</form>
+					<div class="copy-right text-center">
+						<p>@DateTime.Now.Year Tüm Hakları Saklıdır | Traversal
+							
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- //login-section -->
+</body>
+
+</html>
+
+

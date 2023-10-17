@@ -1,0 +1,101 @@
+﻿@using EntityLayer.Concrete
+@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<div class="card">
+    <h5 class="card-header">Kullanıcı Listesi</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ad Soyad</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>Mail</th>
+                    <th>Sil</th>
+                    <th>Düzenle</th>
+                    <th>Yorumlar</th>
+                    <th>Tur Geçmişi</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        @{
+                            sayac = sayac + 1; 
+                        }
+                        <td>@sayac</td>
+                        <td>@item.Name @item.Surname</td>
+                        <td>@item.UserName</td>
+                        <td>@item.Email</td>
+
+                        <td><a href="/Admin/User/DeleteUser/@item.Id" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal" data-delete-url="/Admin/User/DeleteUser/@item.Id">Sil</a></td>
+                        <td><a href="/Admin/User/UpdateUser/@item.Id" class="btn btn-outline-primary">Düzenle</a></td>
+                        <td><a href="/Admin/User/CommentUser/@item.Id" class="btn btn-outline-info">Yorumlar</a></td>
+                        <td><a href="/Admin/User/ReservationUser/@item.Id" class="btn btn-outline-secondary">Tur Geçmişi</a></td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="/Login/SignUp/" class="btn btn-success mt-2"> Yeni Kullanıcı Ekle</a>
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Silme İşlemi Onayı</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Silme işlemini onaylıyor musunuz?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-outline-danger" id="confirmDeleteButton">Evet, Sil</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // "Evet, Sil" butonuna tıklandığında
+        $("#confirmDeleteButton").click(function () {
+            // Silme işlemini gerçekleştir
+            var deleteUrl = $("#exampleModal").find(".btn-outline-danger").data("delete-url");
+
+            // AJAX isteği ile silme işlemini yapabilirsiniz
+            $.ajax({
+                url: deleteUrl,
+                method: "POST", // veya "GET" olarak ayarlayın
+                success: function (data) {
+                    // Silme işlemi başarılıysa modal pencereyi kapatın
+                    $("#exampleModal").modal("hide");
+
+                    // İsteğe bağlı olarak sayfayı yenileyebilirsiniz
+                    location.reload();
+                },
+                error: function (error) {
+                    // Silme işlemi başarısızsa hata mesajını gösterin veya işlemi işleyin
+                    console.log(error);
+                }
+            });
+        });
+    });
+</script>

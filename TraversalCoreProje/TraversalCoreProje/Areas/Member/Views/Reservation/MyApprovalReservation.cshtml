@@ -1,0 +1,67 @@
+﻿@using EntityLayer.Concrete
+@model List<Reservation>
+@{
+    ViewData["Title"] = "MyApprovalReservation";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    int count = 0;
+}
+
+
+<div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+	<div class="container-fluid">
+		<div class="page-header min-height-150 border-radius-xl mt-4" style="background-image: url('/soft-ui-dashboard/assets/img/bg-007.jpg'); background-position-y: 35%; ">
+         <span class="mask bg-gradient-primary opacity-6" style="background-image: linear-gradient(310deg, #2c8515 0%, #1496d7 100%);"></span>
+		</div>
+		<div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
+			<div class="row gx-4">
+				<div class="col-auto my-auto">
+					<div class="h-100">
+						<h3 class="mb-0 font-weight-bold ">
+                            Onay Bekleyen Rezervasyonlarım
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<div class="row mt-5">
+	<div class="col-12">
+		<div class="card mb-4">
+	
+			<div class="card-body px-0 pt-0 pb-2 pt-3">
+				<div class="table-responsive  p-0">
+                    @if (Model.Any())
+                    {
+                        <table class="table align-items-center mb-0">
+                            <tr>
+                                <th>#</th>
+                                <th>Lokasyon</th>
+                                <th>Kişi Sayısı</th>
+                                <th>Rezervasyon Tarihi</th>
+                                <th>Durum</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                    count++;
+                                    <tr>
+                                    <th>@count</th>
+                                    <td>@item.Destination.City</td>
+                                    <td>@item.PersonCount</td>
+                                    <td>@item.ReservationDate</td>
+                                    <td>@item.Status</td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <h5 class="text-danger text-center">Onay Bekleyen Rezervasyonunuz Bulunamadı !</h5>
+                    }
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

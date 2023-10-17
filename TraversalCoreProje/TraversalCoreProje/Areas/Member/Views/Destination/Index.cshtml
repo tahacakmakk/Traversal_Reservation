@@ -1,0 +1,62 @@
+﻿@using EntityLayer.Concrete
+@model List<Destination>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+<div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+
+	<div class="container-fluid">
+		<div class="page-header min-height-150 border-radius-xl mt-4" style="background-image: url('/soft-ui-dashboard/assets/img/bg-006.jpg'); background-position-y: 35%; ">
+		</div>
+		<div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
+			<div class="row gx-4">
+				<div class="col-auto my-auto">
+					<div class="h-100">
+						<h2 class="mb-0 font-weight-bold ">
+							Rotalar
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<div class="row mt-5">
+	<div class="col-12">
+		<div class="card mb-4">
+		
+			<div class="card-body px-0 pt-0 pb-2 pt-5">
+				<div class="table-responsive p-0">
+					<table class="table align-items-center mb-0">
+
+						<tr>
+							<td>#</td>
+							<td>Şehir</td>
+							<td>Süre</td>
+							<td>Kapasite</td>
+							<td>Fiyat</td>
+							<td>Detaylar</td>
+						</tr>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.DestinationID</td>
+								<td>@item.City</td>
+								<td>@item.DayNight</td>
+								<td>@item.Capacity</td>
+								<td>@item.Price ₺</td>
+								<td><a href="#" class="btn " style="margin:10px 0px 10px 0px">Detaylar</a></td>
+							</tr>
+						}
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

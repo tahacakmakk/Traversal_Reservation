@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.Reservation
+@{
+    ViewData["Title"] = "NewReservation";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+
+	<div class="container-fluid">
+		<div class="page-header min-height-150 border-radius-xl mt-4" style="background-image: url('/soft-ui-dashboard/assets/img/bg-007.jpg'); background-position-y: 35%; ">
+		</div>
+		<div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
+			<div class="row gx-4">
+				<div class="col-auto my-auto">
+					<div class="h-100">
+						<h3 class="mb-0 font-weight-bold ">
+                            Yeni Rezervasyon Sayfası
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<form method="post" class="mt-5">
+    <div class="form-group">
+    @Html.Label("Lokasyon")
+    @Html.DropDownListFor(x =>x.DestinationID,(List<SelectListItem>)ViewBag.v,new{@class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.Label("Kişi Sayısı")
+        <input type="text" asp-for="PersonCount" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Tarih")
+        <input type="datetime-local" asp-for="ReservationDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Varsa Eklemek İstedikleriniz")
+       @Html.TextAreaFor(x=>x.Description,3,10,new{@class="form-control"})
+    </div>
+    <button class="btn">Rezervasyon Yap</button>
+
+</form>
+<script>
+    window.onload = (function () {
+        alert('Rezervasyonunuz başlangıçta onay bekliyor şeklinde alınacaktır.Rezervasyon onaylanma süreci için "Güncel Rezervasyonlarım" menusunu takip etmeyi unutmayın.');
+    });</script>

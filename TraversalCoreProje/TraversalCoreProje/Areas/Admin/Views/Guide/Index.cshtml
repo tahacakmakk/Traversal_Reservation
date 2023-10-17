@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concrete
+@model List<Guide>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+	int count = 0;
+}
+<!-- Basic Bootstrap Table -->
+<div class="card">
+	<h5 class="card-header">Rehber Listesi</h5>
+	<div class="table-responsive text-nowrap">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Görsel</th>
+					<th>Ad Soyad</th>
+					<th>Açıklama</th>
+					<th>Durum</th>
+					<th>Düzenle</th>
+				</tr>
+			</thead>
+			<tbody class="table-border-bottom-0">
+				@foreach (var item in Model)
+				{
+					count++;
+					<tr>
+						<td>@count</td>
+						<td style="max-width:100px;"><img src="@item.Image" style="max-width:80px; border-radius:50%" /></td>
+						<td>@item.Name </td>
+						<td>@item.Description</td>
+
+						@{
+							if (item.Status == true)
+							{
+								<td> <a href="/Admin/Guide/ChangeToFalse/@item.GuideID" class="btn btn-danger">Pasif Yap</a> </td>
+							}
+							else
+							{
+								<td> <a href="/Admin/Guide/ChangeToTrue/@item.GuideID" class="btn btn-success">Aktif Yap</a> </td>
+							}
+						}
+
+						<td><a href="/Admin/Guide/EditGuide/@item.GuideID" class="btn btn-outline-info">Düzenle</a></td>
+
+
+					</tr>
+				}
+
+			</tbody>
+		</table>
+	</div>
+</div>
+<a href="/Admin/Guide/AddGuide/" class="btn btn-success mt-2"> Yeni Rehber Ekle</a>
