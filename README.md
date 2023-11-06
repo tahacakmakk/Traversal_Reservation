@@ -14,7 +14,7 @@ ayrıca yönetici tarafından kontrol edilen bir dizi özelliği içerir.
 -  **Veri Transferi:** DTO (Data Transfer Object) kullanılmıştır.
 -  **Kullanıcı Yönetimi:** ASP.NET Core Identity ile giriş işlemleri sağlanmıştır.
 -  **Web Teknolojileri:** HTML, Bootstrap, CSS ve JavaScript kullanılmıştır.
-
+- **Ek Teknolojiler ve Yaklaşımlar:** SignalR, Mediator Design Pattern, Unit of Work Design Pattern, CQRS Design Pattern, Rapid API ile veri çekme, API tüketimi, Mailkit ile e-posta gönderme işlemleri, dosyadan fotoğraf ekleme ve güncelleme, çoklu dil desteği gibi ek teknolojiler ve tasarım desenleri de projeye entegre edilmiştir.
 # Anahtar Özellikler
 1. **Ana Sayfa:** Herkesin seyahat rotalarını gördüğü bir ön yüz sunar. Bu sayfa, kullanıcıları çeşitli seyahat rotalarını incelemeye ve ilgili rehberlerin eklediği bilgilere erişmeye davet eder.
 
